@@ -1,0 +1,30 @@
+<div class="patient-card" [class.urgent]="patient.niveauUrgence === 'rouge'" (click)="onSelect()">
+  <div class="patient-card__header">
+    <div class="patient-initials">{{ initialles }}</div>
+    <div class="patient-info">
+      <h3>{{ patient.prenom }} {{ patient.nom }}</h3>
+      <p>{{ age }} ans - {{ patient.sexe }}</p>
+    </div>
+    <div class="patient-badge" [ngClass]="'badge-' + patient.niveauUrgence">
+      {{ patient.niveauUrgence | uppercase }}
+    </div>
+  </div>
+
+  <div class="patient-card__body">
+    <div class="patient-ins" *ngIf="showSensitiveData">
+      <strong>INS :</strong> {{ patient.ins }}
+    </div>
+    <div class="patient-ins" *ngIf="!showSensitiveData">
+      <strong>INS :</strong> * ** ** ** *** *** **
+    </div>
+    <div class="patient-status">
+      <strong>Statut :</strong> {{ patient.statut }}
+    </div>
+  </div>
+
+  <div class="patient-card__actions">
+    <button class="btn btn-danger" (click)="$event.stopPropagation(); signalerUrgence('Alerte via carte')">
+      URGENCE
+    </button>
+  </div>
+</div>

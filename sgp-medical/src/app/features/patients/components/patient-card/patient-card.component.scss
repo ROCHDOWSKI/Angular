@@ -1,0 +1,92 @@
+.patient-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #fff;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &.urgent {
+    border-left: 5px solid #e74c3c;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .patient-initials {
+    width: 48px;
+    height: 48px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .patient-info {
+    flex: 1;
+    h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    p {
+      margin: 2px 0 0;
+      color: #7f8c8d;
+      font-size: 0.9rem;
+    }
+  }
+
+  .patient-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &.badge-vert { background-color: #27ae60; color: white; }
+    &.badge-jaune { background-color: #f1c40f; color: black; }
+    &.badge-orange { background-color: #e67e22; color: white; }
+    &.badge-rouge { background-color: #e74c3c; color: white; }
+  }
+
+  &__body {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+
+    div { margin-bottom: 4px; }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+
+    .btn-danger {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: bold;
+      
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+  }
+}
