@@ -1,0 +1,9 @@
+<div class="patient-list-container">
+    <h2>Liste des Patients</h2>
+
+    <div class="patient-grid">
+        <app-patient-card *ngFor="let p of patients$ | async" [patient]="p" [showSensitiveData]="true"
+            (patientSelected)="onPatientSelected($event)" (urgenceSignalee)="onUrgence($event)">
+        </app-patient-card>
+    </div>
+</div>
